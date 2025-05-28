@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: worker
-  name: worker
-  namespace: flux-system
+    app: purple
+  name: purple
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: worker
+      app: purple
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: worker
+        app: purple
     spec:
       containers:
-      - image: dockercoins/worker:v0.1
-        name: worker
+      - image: jpetazzo/color
+        name: color
